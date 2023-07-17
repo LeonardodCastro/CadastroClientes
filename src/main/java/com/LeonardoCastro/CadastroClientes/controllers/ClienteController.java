@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/")
 public class ClienteController {
@@ -21,6 +23,11 @@ public class ClienteController {
     @GetMapping("/clientes")
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(clienteService.buscaGeral());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable @RequestBody Long id) {
+        return ResponseEntity.ok(clienteService.buscaPorId(id));
     }
 
 }
