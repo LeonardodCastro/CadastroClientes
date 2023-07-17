@@ -7,13 +7,19 @@ import com.LeonardoCastro.CadastroClientes.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
     public ClienteResponseDTO metodoQueSalvaNoBanco(ClienteRequestDTO requestDTO){
-        ClienteResponseDTO responseDTO = clienteRepository.save(ClienteEntity.viraEntitdade(requestDTO));
+        ClienteResponseDTO responseDTO = clienteRepository.save(ClienteEntity.settaRequestNoEnitity(requestDTO));
         return responseDTO;
+    }
+    public List<ClienteEntity> buscaGeral(){
+        List<ClienteEntity> list = clienteRepository.findAll();
+        return list;
     }
 }

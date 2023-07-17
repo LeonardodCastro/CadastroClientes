@@ -19,8 +19,9 @@ public class ClienteEntity extends ClienteResponseDTO {
     private String name;
     private Integer age;
     private String gender;
+
     @Bean
-    public static ClienteEntity viraEntitdade (ClienteRequestDTO requestDTO){
+    public static ClienteEntity settaRequestNoEnitity(ClienteRequestDTO requestDTO) {
         ClienteEntity clienteEntity = new ClienteEntity();
         clienteEntity.setName(requestDTO.getName());
         clienteEntity.setAge(requestDTO.getAge());
