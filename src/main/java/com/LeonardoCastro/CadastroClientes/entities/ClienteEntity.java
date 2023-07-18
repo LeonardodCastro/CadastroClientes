@@ -2,9 +2,10 @@ package com.LeonardoCastro.CadastroClientes.entities;
 
 import com.LeonardoCastro.CadastroClientes.dtos.ClienteRequestDTO;
 import com.LeonardoCastro.CadastroClientes.dtos.ClienteResponseDTO;
-import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.context.annotation.Bean;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -14,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 @Table(name = "tb_cliente")
 public class ClienteEntity extends ClienteResponseDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Integer age;

@@ -15,15 +15,18 @@ import java.util.Optional;
 public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
-    public ClienteResponseDTO metodoQueSalvaNoBanco(ClienteRequestDTO requestDTO){
+
+    public ClienteResponseDTO metodoQueSalvaNoBanco(ClienteRequestDTO requestDTO) {
         ClienteResponseDTO responseDTO = clienteRepository.save(ClienteEntity.settaRequestNoEnitity(requestDTO));
         return responseDTO;
     }
-    public List<ClienteEntity> buscaGeral(){
+
+    public List<ClienteEntity> buscaGeral() {
         List<ClienteEntity> list = clienteRepository.findAll();
         return list;
     }
-    public Optional<ClienteEntity> buscaPorId(Long id){
+
+    public Optional<ClienteEntity> buscaPorId(Long id) {
         Optional<ClienteEntity> result = clienteRepository.findById(id);
         return result;
     }

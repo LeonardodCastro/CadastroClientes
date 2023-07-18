@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/clientes")
 public class ClienteController {
     @Autowired
     ClienteService clienteService;
@@ -20,14 +20,15 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.metodoQueSalvaNoBanco(requestDTO));
     }
 
-    @GetMapping("/clientes")
+    @GetMapping("/")
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(clienteService.buscaGeral());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable @RequestBody Long id) {
-        return ResponseEntity.ok(clienteService.buscaPorId(id));
+    public ResponseEntity<?> findById(@PathVariable @RequestBody String id) {
+        Long longId = Long.parseLong(id);
+        return ResponseEntity.ok(clienteService.buscaPorId(longId));
     }
 
 }

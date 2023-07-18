@@ -1,0 +1,6 @@
+--INSERT INTO tb_cliente (id, name, age, gender) VALUES (1, 'leo', '23','male');
+--INSERT INTO tb_cliente (id, name, age, gender) VALUES (2, 'juba', '21','female');
+--INSERT INTO tb_cliente (id, name, age, gender) VALUES (3, 'tati', '40','female');
+--INSERT INTO tb_cliente (id, name, age, gender) VALUES (4, 'carlos', '40','male');
+--INSERT INTO tb_cliente (id, name, age, gender) VALUES (5, 'laura', '14','female');
+--INSERT INTO tb_cliente (id, name, age, gender) VALUES (6, 'xpto', '55','male');
